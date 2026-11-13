@@ -1,7 +1,7 @@
 # RiFA Technology dev environment bootstrap (Windows PowerShell 5.1+).
 # Run once on a new machine. Safe to re-run.
 #
-#   irm https://raw.githubusercontent.com/aikotoba883/redant-dev-env/main/bootstrap.ps1 | iex
+#   irm https://raw.githubusercontent.com/aikotoba883/rifa-dev-env/main/bootstrap.ps1 | iex
 #   # or, from a downloaded copy:
 #   powershell -ExecutionPolicy Bypass -File .\bootstrap.ps1
 #
@@ -12,7 +12,7 @@
 $ErrorActionPreference = 'Stop'
 
 $Msys2Root = if ($env:MSYS2_ROOT) { $env:MSYS2_ROOT } else { 'C:\msys64' }
-$RepoUrl   = if ($env:REDANT_DEVENV_REPO) { $env:REDANT_DEVENV_REPO } else { 'https://github.com/aikotoba883/redant-dev-env.git' }
+$RepoUrl   = if ($env:REDANT_DEVENV_REPO) { $env:REDANT_DEVENV_REPO } else { 'https://github.com/aikotoba883/rifa-dev-env.git' }
 $Bash      = Join-Path $Msys2Root 'usr\bin\bash.exe'
 
 function Step($msg) { Write-Host "`n==> $msg" -ForegroundColor Cyan }

@@ -1,4 +1,4 @@
-# redant-dev-env
+# rifa-dev-env
 
 紅火蟻科技（RiFA Technology）的開發環境一鍵建置腳本。
 
@@ -13,7 +13,7 @@
 **1. 在 Windows PowerShell 執行**（MSYS2、套件、環境變數會一次處理完）
 
 ```powershell
-irm https://raw.githubusercontent.com/aikotoba883/redant-dev-env/main/bootstrap.ps1 | iex
+irm https://raw.githubusercontent.com/aikotoba883/rifa-dev-env/main/bootstrap.ps1 | iex
 ```
 
 上面這行需要 repo 是 public。如果 repo 是 private，先從 GitHub 下載 zip 並解壓縮，再執行：
