@@ -25,6 +25,7 @@ check() {
 check git          git --version
 check vim          vim --version
 check ssh          ssh -V
+check gh           gh --version
 check gcc          gcc --version
 check g++          g++ --version
 check gdb          gdb --version

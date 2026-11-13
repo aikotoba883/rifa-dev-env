@@ -51,7 +51,7 @@ git pull
 | 檔案 | 用途 |
 |---|---|
 | `bootstrap.ps1` | Windows 端的入口：安裝 MSYS2、跑兩輪 `pacman -Syu`、設定使用者環境變數、clone 本 repo，最後呼叫 `setup.sh` |
-| `setup.sh` | UCRT64 端：安裝套件、設定 git、產生 SSH key、安裝 Claude Code CLI、執行 `verify.sh` |
+| `setup.sh` | UCRT64 端：安裝套件（含 GitHub CLI `gh`）、設定 git、產生 SSH key、安裝 Claude Code CLI、執行 `verify.sh` |
 | `packages-ucrt64.txt` | pacman 套件清單。要新增工具時**只改這個檔案** |
 | `verify.sh` | 檢查並列出所有工具的版本；有缺少時回傳 1 |
 | `scripts/pg-dev.sh` | 本機 PostgreSQL：`init` / `start` / `stop` / `status` / `psql` |

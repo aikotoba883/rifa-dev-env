@@ -10,6 +10,9 @@ curl
 unzip
 make
 
+# --- GitHub CLI: PRs, issues (OPEN-008), repo creation ---
+mingw-w64-ucrt-x86_64-github-cli
+
 # --- UCRT64 toolchain: C++ (projects A, H) ---
 mingw-w64-ucrt-x86_64-gcc
 mingw-w64-ucrt-x86_64-gdb
