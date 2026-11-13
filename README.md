@@ -29,7 +29,7 @@ powershell -ExecutionPolicy Bypass -File .\bootstrap.ps1
 **3. 重開終端機與 Claude Code**，然後在「MSYS2 UCRT64」shell 裡確認：
 
 ```bash
-cd ~/ZeNX/redant-dev-env && ./verify.sh
+cd ~/ZeNX/rifa-dev-env && ./verify.sh
 ```
 
 所有工具都顯示 `[ OK ]` 就完成了。
@@ -39,7 +39,7 @@ cd ~/ZeNX/redant-dev-env && ./verify.sh
 ## 已經有 MSYS2 的電腦
 
 ```bash
-cd ~/ZeNX/redant-dev-env
+cd ~/ZeNX/rifa-dev-env
 git pull
 ./setup.sh          # 可以重複執行，只會補上缺少的項目
 ```

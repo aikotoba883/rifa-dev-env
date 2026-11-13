@@ -12,7 +12,7 @@
 $ErrorActionPreference = 'Stop'
 
 $Msys2Root = if ($env:MSYS2_ROOT) { $env:MSYS2_ROOT } else { 'C:\msys64' }
-$RepoUrl   = if ($env:REDANT_DEVENV_REPO) { $env:REDANT_DEVENV_REPO } else { 'https://github.com/aikotoba883/rifa-dev-env.git' }
+$RepoUrl   = if ($env:RIFA_DEVENV_REPO) { $env:RIFA_DEVENV_REPO } else { 'https://github.com/aikotoba883/rifa-dev-env.git' }
 $Bash      = Join-Path $Msys2Root 'usr\bin\bash.exe'
 
 function Step($msg) { Write-Host "`n==> $msg" -ForegroundColor Cyan }
@@ -56,14 +56,14 @@ foreach ($k in $vars.Keys) {
 }
 
 # 4. Locate or clone this repo
-Step 'Locating redant-dev-env'
+Step 'Locating rifa-dev-env'
 $repoDir = $null
 if ($PSScriptRoot -and (Test-Path (Join-Path $PSScriptRoot 'setup.sh'))) {
     $repoDir = $PSScriptRoot
 } else {
     Invoke-Msys 'pacman -S --needed --noconfirm git'
     $homeWin = (& $Bash -lc 'cygpath -w ~').Trim()
-    $repoDir = Join-Path $homeWin 'ZeNX\redant-dev-env'
+    $repoDir = Join-Path $homeWin 'ZeNX\rifa-dev-env'
     if (-not (Test-Path (Join-Path $repoDir 'setup.sh'))) {
         $repoUnix = (& $Bash -lc "cygpath -u '$repoDir'").Trim()
         Invoke-Msys "mkdir -p `"`$(dirname '$repoUnix')`" && git clone '$RepoUrl' '$repoUnix'"
