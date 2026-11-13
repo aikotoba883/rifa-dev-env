@@ -1,0 +1,27 @@
+# RiFA Technology dev environment - pacman packages (MSYS2 UCRT64)
+# One package per line. Lines starting with # are ignored.
+# setup.sh installs these with: pacman -S --needed
+
+# --- MSYS layer (shell utilities) ---
+git
+vim
+openssh
+curl
+unzip
+make
+
+# --- UCRT64 toolchain: C++ (projects A, H) ---
+mingw-w64-ucrt-x86_64-gcc
+mingw-w64-ucrt-x86_64-gdb
+mingw-w64-ucrt-x86_64-cmake
+mingw-w64-ucrt-x86_64-ninja
+mingw-w64-ucrt-x86_64-pkgconf
+# clang-format / clang-tidy (plan §3.2)
+mingw-w64-ucrt-x86_64-clang-tools-extra
+
+# --- UCRT64: Web / backend (projects C, D, E) ---
+mingw-w64-ucrt-x86_64-nodejs
+# needed by node-gyp when an npm package builds a native addon
+mingw-w64-ucrt-x86_64-python
+# local PostgreSQL for Q1 (DEC-014); Docker comes in Q2
+mingw-w64-ucrt-x86_64-postgresql
