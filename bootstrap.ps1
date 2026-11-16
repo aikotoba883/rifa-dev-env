@@ -65,8 +65,13 @@ if ($PSScriptRoot -and (Test-Path (Join-Path $PSScriptRoot 'setup.sh'))) {
     $homeWin = (& $Bash -lc 'cygpath -w ~').Trim()
     $repoDir = Join-Path $homeWin 'ZeNX\rifa-dev-env'
     if (-not (Test-Path (Join-Path $repoDir 'setup.sh'))) {
+        # 改由 PowerShell 直接建立父目錄，避免 Bash 巢狀指令跳脫出錯
+        $parentDir = Split-Path -Parent $repoDir
+        if (-not (Test-Path $parentDir)) {
+            New-Item -ItemType Directory -Force -Path $parentDir | Out-Null
+        }
         $repoUnix = (& $Bash -lc "cygpath -u '$repoDir'").Trim()
-        Invoke-Msys "mkdir -p `"`$(dirname '$repoUnix')`" && git clone '$RepoUrl' '$repoUnix'"
+        Invoke-Msys "git clone '$RepoUrl' '$repoUnix'"
     }
 }
 Write-Host "  $repoDir"
